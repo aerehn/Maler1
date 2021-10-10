@@ -110,13 +110,13 @@ kohdeRiviButton.grid(row=5, column=0,sticky=W, pady=pady, padx=padx)
 def run():
     global runButton
     global Console
-    runButton.configure(text = "Running")
-
     if (len(sourceExcel)>0)&(len(kohdeExcel)>0)&(sourceExcel!=kohdeExcel)&(kohdeRivi>1)&(lahdeRivit[0]>1):
         moro(2,debug)
         write("ajetaan exceleitä")
         ajaArvot(lahdeRivit,kohdeRivi,sourceExcel,kohdeExcel,Console,debug)
-    runButton.configure(text="Aja")
+    else: #this is for testing only
+        ajaArvot( console=Console, debug=debug)
+
 
 
 
