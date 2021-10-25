@@ -44,5 +44,5 @@ def ajaArvot(console,lahdeRivit=-1, kohdeRivi=32, lahde="export_SOK_taulukkovien
 
 
 
-#fuck you! we are in branch firstproto
+
 
