@@ -19,8 +19,10 @@ def ajaArvot(lahdeRivit=-1, kohdeRivi=32, lahde="export_Tuotteiden_vienti_XLSX_2
 
     #function for inserting data in column form
     def writeColumn(columnList,sheet,targetRow,targetCol,sourceRows,maxLen=0):
+        iterator = 0
         for i in range(sourceRows[0]-2,sourceRows[1]-1):
-            sheet[targetCol+str(i+targetRow)] = columnList[i]
+            sheet[targetCol+str(iterator+targetRow)] = columnList[i]
+            iterator = iterator + 1
 
     def writeVanhatTuotteet(workbook, targetRow, source, sourceRows):
         offset = 0
@@ -39,7 +41,7 @@ def ajaArvot(lahdeRivit=-1, kohdeRivi=32, lahde="export_Tuotteiden_vienti_XLSX_2
         targetCols = ["N","O","P","T","CJ","DQ","DU","DW"]
 
         writeColumn(source['sku'], sheet, targetRow + offset, "AB", sourceRows =sourceRows)
-        writeColumn(source['etiketin_lisaosa_25_merkkia-fi_FI'], sheet, targetRow + offset, "EN", sourceRows=sourceRows)
+        writeColumn(source['etiketin_lisateksti_25-fi_FI'], sheet, targetRow + offset, "EN", sourceRows=sourceRows)
         writeColumn(source['jmpaketissa-unit'], sheet, targetRow + offset, "AJ", sourceRows=sourceRows)
         writeColumn(source['koko'], sheet, targetRow + offset, "BR", sourceRows =sourceRows)
         writeColumn(source['korkeus'], sheet, targetRow + offset, "DY", sourceRows =sourceRows)
@@ -49,12 +51,13 @@ def ajaArvot(lahdeRivit=-1, kohdeRivi=32, lahde="export_Tuotteiden_vienti_XLSX_2
         writeColumn(source['pituus'], sheet, targetRow + offset, "DU", sourceRows =sourceRows)
         writeColumn(source['raaka_aine_materiaali'], sheet, targetRow + offset, "BW", sourceRows =sourceRows)
         writeColumn(source['savy_vari-fi_FI'], sheet, targetRow + offset, "BT", sourceRows =sourceRows)
+        writeColumn(source['tekninenvarinumero'], sheet, targetRow + offset, "BS", sourceRows=sourceRows)
         writeColumn(source['tilausnumero'], sheet, targetRow + offset, "AQ", sourceRows =sourceRows)
         writeColumn(source['tullikoodi_nimike'], sheet, targetRow + offset, "ET", sourceRows=sourceRows)
         writeColumn(source['tuotekuvaus_markkinointiteksti-fi_FI'], sheet, targetRow + offset, "EV", sourceRows =sourceRows)
         writeColumn(source['tuotemerkki'], sheet, targetRow + offset, "T", sourceRows =sourceRows)
-        writeColumn(source['tuotenimi_25_merkkia-fi_FI'], sheet, targetRow + offset, "EL", sourceRows=sourceRows)
-        writeColumn(source['tuotenimi_25_merkkia-sv_SE'], sheet, targetRow + offset, "EP", sourceRows=sourceRows)
+        writeColumn(source['hyllynreuna_25-fi_FI'], sheet, targetRow + offset, "EL", sourceRows=sourceRows)
+        writeColumn(source['hyllynreuna_25-sv_SE'], sheet, targetRow + offset, "EP", sourceRows=sourceRows)
         writeColumn(source['tuotenimi_40_merkkia-en_GB'], sheet, targetRow + offset, "R", sourceRows=sourceRows)
         writeColumn(source['tuotenimi_40_merkkia-fi_FI'], sheet, targetRow + offset, "P", maxLen=40,
                     sourceRows=sourceRows)

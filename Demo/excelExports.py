@@ -19,8 +19,10 @@ def ajaArvot(lahdeRivit=-1, kohdeRivi=32, lahde="export_Tuotteiden_vienti_XLSX_2
 
     #function for inserting data in column form
     def writeColumn(columnList,sheet,targetRow,targetCol,sourceRows,maxLen=0):
+        iterator = 0
         for i in range(sourceRows[0]-2,sourceRows[1]-1):
-            sheet[targetCol+str(i+targetRow)] = columnList[i]
+            sheet[targetCol+str(iterator+targetRow)] = columnList[i]
+            iterator = iterator + 1
 
     def writeVanhatTuotteet(workbook, targetRow, source, sourceRows):
         offset = 0
