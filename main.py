@@ -3,8 +3,8 @@ from openpyxl import load_workbook
 import time
 from tkinter import *
 from tkinter.filedialog import askopenfilename
-from excelExports import moro, ajaArvot
-
+from Excel.excelExports import ajaArvot
+from Excel.writers import moro, write
 debug = True
 # root window/widget
 root = Tk()
@@ -25,6 +25,7 @@ label1.place(x = 0, y = 0)
 
 Console = Text(root, height=18)
 Console.grid(row=1, column=3,sticky=W, pady=pady, padx=padx, rowspan=8)
+"""
 def write(*message, end = "\n", sep = " "):
     text = ""
     for item in message:
@@ -32,6 +33,7 @@ def write(*message, end = "\n", sep = " "):
         text += sep
     text += end
     Console.insert(INSERT, text)
+"""
 # created a label(widget)
 labelBg = "#c9c9c9"
 myLabel = Label(root, text="Excel ohjelma", bg=labelBg)
@@ -112,10 +114,10 @@ def run():
     global Console
     if (len(sourceExcel)>0)&(len(kohdeExcel)>0)&(sourceExcel!=kohdeExcel)&(kohdeRivi>1)&(lahdeRivit[0]>1):
         moro(2,debug)
-        write("ajetaan exceleitä")
-        ajaArvot(lahdeRivit,kohdeRivi,sourceExcel,kohdeExcel,Console,debug)
+        write(message="ajetaan exceleitä", console=Console)
+        ajaArvot(Console,lahdeRivit,kohdeRivi,sourceExcel,kohdeExcel,debug)
     else: #this is for testing only
-        ajaArvot( console=Console, debug=debug)
+        ajaArvot(Console, debug=debug)
 
 
 

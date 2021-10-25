@@ -1,0 +1,8 @@
+tekninenvarinumero
+Tuote laitettavissa piikkipaikalle ja tanko/henkarituote logiikka
+tuotteen perusmäärä yksikkö jm?
+toimittajan tuotekoodia käytettävä tilauksilla
+tuotteen nettosisällön määrä
+CDT tuoteryhmä logiikka/lajitteluperuste
+
+paino ja pituus mitat saatiin muutettua luvuiksi
