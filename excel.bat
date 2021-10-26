@@ -1,0 +1,1 @@
+cd "C:\Users\AtteR\PycharmProjects\maler1" & python main.py
