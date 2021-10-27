@@ -114,7 +114,7 @@ def run():
     global Console
     if (len(sourceExcel)>0)&(len(kohdeExcel)>0)&(sourceExcel!=kohdeExcel)&(kohdeRivi>1)&(lahdeRivit[0]>1):
         moro(2,debug)
-        write(message="ajetaan exceleitä", console=Console)
+        write("ajetaan exceleitä", console=Console)
         ajaArvot(Console,lahdeRivit,kohdeRivi,sourceExcel,kohdeExcel,debug)
     else: #this is for testing only
         ajaArvot(Console, debug=debug)

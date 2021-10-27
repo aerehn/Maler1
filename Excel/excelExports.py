@@ -10,7 +10,7 @@ import pandas as pd
 
 # A master function that writes all the values to the target workbook
 
-def ajaArvot(console,lahdeRivit=-1, kohdeRivi=32, lahde="export_SOK_taulukkovienti_2021-10-20_06-11-04.xlsx", kohde="SOK Käyttötavaroiden erätuotelomake (muut käyttötavarat) v2 33 (version 1) (version 1)_ROSTERi.xlsx",debug=True):
+def ajaArvot(console,lahdeRivit=-1, kohdeRivi=32, lahde="export_SOK_taulukkovienti_2021-10-27_07-45-20.xlsx", kohde="SOK Käyttötavaroiden erätuotelomake (muut käyttötavarat) v2 33 (version 1) (version 1)_ROSTERi.xlsx",debug=True):
 
 
 
@@ -28,19 +28,20 @@ def ajaArvot(console,lahdeRivit=-1, kohdeRivi=32, lahde="export_SOK_taulukkovien
         shape = lahdeDF.shape
         lahdeRivit=[2,shape[0]+1]
     #writeVanhatTuotteet(SOK_Ke, targetRow=kohdeRivi, source=lahdeDF,sourceRows = lahdeRivit)
-    writeUutuudet(SOK_Ke, targetRow=kohdeRivi, source=lahdeDF,sourceRows = lahdeRivit)
-    writeToimitusyks(SOK_Ke, targetRow=kohdeRivi, source=lahdeDF,sourceRows = lahdeRivit)
-    writeNimet(SOK_Ke, targetRow=kohdeRivi, source=lahdeDF,sourceRows = lahdeRivit)
+    writeUutuudet(SOK_Ke, targetRow=kohdeRivi, source=lahdeDF,sourceRows = lahdeRivit, console=console)
+    writeToimitusyks(SOK_Ke, targetRow=kohdeRivi, source=lahdeDF,sourceRows = lahdeRivit, console=console)
+    writeNimet(SOK_Ke, targetRow=kohdeRivi, source=lahdeDF,sourceRows = lahdeRivit, console=console)
     write("Saving...",console=console)
     moro("Saving...",debug)
     try:
         SOK_Ke.save(
             filename=kohde)
+        write("Saving process complete.", console=console)
+        moro("Saving process complete.", debug)
     except PermissionError:
         moro("PermissionError. Kohdetiedosto todennäköisesti auki!")
         write("Lupavirhe! Kohdetiedosto todennäköisesti auki! Tallentaminen epäonnistui.",console=console)
-    write("Saving process complete.",console=console)
-    moro("Saving process complete.",debug)
+
 
 
 

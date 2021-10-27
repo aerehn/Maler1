@@ -90,4 +90,17 @@ def writeLuku(columnList,sheet,targetRow,targetCol,sourceRows):
             sheet[targetCol + str(iterator + targetRow)] = value
             iterator = iterator + 1
 
+def writePiikki(columnList,sheet,targetRow,targetCol,sourceRows):
+    iterator = 0
+    value = ""
+    for i in range(sourceRows[0] - 2, sourceRows[1] - 1):
+        value = str(columnList[i])
+        if value == None:
+            value = "Ei / No"
+        elif "piikki" in value:
+            value = "Kyllä / Yes"
+        else:
+            value = "Ei / No"
+        sheet[targetCol + str(iterator + targetRow)] = value
+        iterator = iterator + 1
 
