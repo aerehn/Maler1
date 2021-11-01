@@ -1,9 +1,13 @@
 from openpyxl import load_workbook
 from Excel.writers import *
 #from Excel.writers import printer, writeColumn, moro, write, forceColumn,writeUnitM, writeHyllytettava, writePerusmaarayksikko, writeTuotemerkki, writeLuku
-def writeUutuudet(workbook, targetRow, source, sourceRows, console):
+def writeUutuudet(workbook, targetRows, source, sourceRows, console):
+    debug = True
     offset = 0
-    printer("Kirjoitellaan uutuuksia!")
+    targetRow = targetRows[0]
+    print(targetRow)
+    print(type(targetRow))
+    moro("Writing 1. Uutuudet - New articles",debug)
     sheet = workbook.get_sheet_by_name('1. Uutuudet - New articles')
     try:
         writeColumn(source['sku'], sheet, targetRow + offset, "AB", sourceRows=sourceRows)
@@ -54,16 +58,20 @@ def writeUutuudet(workbook, targetRow, source, sourceRows, console):
         write(message,  console=console)
     # KeyError = KeyError: numero Rivejä ei ole noin montaa!
     # KeyError = KeyError: 'Atribuutti' => vaadittavaa atribuuttia ei löydy lähdekansiosta
-def writeVanhatTuotteet(workbook, targetRow, source, sourceRows, console):
+def writeVanhatTuotteet(workbook, targetRows, source, sourceRows, console):
     offset = 0
+    targetRow = targetRows[0]
     sheet = workbook.get_sheet_by_name("Vanhat tuotteet - Old articles")
     #sku
     writeColumn(source['sku'], sheet, targetRow + offset, "A", sourceRows =sourceRows)
     #
     writeColumn(source['pitka_tuotenimi-fi_FI'], sheet, targetRow + offset, "C", sourceRows =sourceRows)
 
-def writeToimitusyks(workbook, targetRow, source, sourceRows, console):
+def writeToimitusyks(workbook, targetRows, source, sourceRows, console):
     offset = 0
+    debug = True
+    targetRow = targetRows[0]
+    moro("Writing 2. Toimitusyks. -  Deliv. units", debug)
     sheet = workbook.get_sheet_by_name('2. Toimitusyks. -  Deliv. units')
     #writables get written
     try:
@@ -90,8 +98,11 @@ def writeToimitusyks(workbook, targetRow, source, sourceRows, console):
         moro(message)
         write(message,  console=console)
 
-def writeNimet(workbook, targetRow, source, sourceRows, console):
+def writeNimet(workbook, targetRows, source, sourceRows, console):
     offset = 0
+    debug=True
+    targetRow=targetRows[0]
+    moro("Writing 3. Nimet - Names", debug)
     sheet = workbook.get_sheet_by_name('3. Nimet - Names')
     try:
         writeColumn(source['pitka_tuotenimi-en_GB'], sheet, targetRow + offset, "U", sourceRows=sourceRows)

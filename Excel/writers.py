@@ -29,6 +29,9 @@ def writeColumn(columnList,sheet,targetRow,targetCol,sourceRows):
         sheet[targetCol+str(iterator+targetRow)] = columnList[i]
         iterator = iterator + 1
 
+def clearColumn(sheet,targetRows,targetCol):
+    for i in range(targetRows[0], targetRows[1]+1):
+        sheet[targetCol + str(i)] = ""
 
 # a method for forcing a single value for the entire column
 def forceColumn(value,sheet,targetRow,targetCol,sourceRows):
