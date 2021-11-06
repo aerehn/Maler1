@@ -18,7 +18,7 @@ def writeUutuudet(workbook, targetRows, source, sourceRows, console):
         writeColumn(source['raaka_aine_materiaali'], sheet, targetRow + offset, "BW", sourceRows=sourceRows)
         writeColumn(source['uusi_tilausnumero'], sheet, targetRow + offset, "AF", sourceRows=sourceRows)
         writeColumn(source['PKT_GTIN'], sheet, targetRow + offset, "AM", sourceRows=sourceRows)
-        writeColumn(source['savy_vari-fi_FI'], sheet, targetRow + offset, "BU", sourceRows=sourceRows)
+        writeColumn(source['savy_vari-fi_FI'], sheet, targetRow + offset, "BT", sourceRows=sourceRows)
         writeColumn(source['tekninenvarinumero'], sheet, targetRow + offset, "BS", sourceRows=sourceRows)
         writeColumn(source['tilausnumero'], sheet, targetRow + offset, "AQ", sourceRows=sourceRows)
         writeColumn(source['tullikoodi_nimike'], sheet, targetRow + offset, "ET", sourceRows=sourceRows)

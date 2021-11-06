@@ -43,7 +43,7 @@ def ajaArvot(console,lahdeRivit=-1, kohdeRivit=[28,-1], lahde="export_SOK_tauluk
         write("Lupavirhe! Kohdetiedosto todennäköisesti auki! Tallentaminen epäonnistui.",console=console)
 
 def clearWorkbook(console, kohdeRivit=[28,500], kohde="SOK Käyttötavaroiden erätuotelomake (muut käyttötavarat) v2 33 (version 1) (version 1)_ROSTERi.xlsx",debug=True):
-    columns = {'1. Uutuudet - New articles':["AB","EN","BR","AO","EC","BW","AF","AM","BU","BS","AQ","ET","EV","EL","EP","R","P","CP","AS","CU","CX","ER","AJ","EC","EE","EG","X","T","DU","AH","DW","DY","DQ","DO","V","BT",],
+    columns = {'1. Uutuudet - New articles':["AB","EN","BR","AO","EC","BW","AF","AM","BU","BT","BS","AQ","ET","EV","EL","EP","R","P","CP","AS","CU","CX","ER","AJ","EC","EE","EG","X","T","DU","AH","DW","DY","DQ","DO","V","BT",],
                 '2. Toimitusyks. -  Deliv. units':["M","BV","BX","BT","BR","K","AR","AP","AN","AL","I","O",],
                '3. Nimet - Names':["U","C","M","O"],
                '5. P.materiaalit - P.materials':["N","R","AO","AQ"],
