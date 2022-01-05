@@ -11,8 +11,8 @@ import pandas as pd
 # A master function that writes all the values to the target workbook
 
 def ajaArvot(console,lahdeRivit=-1, kohdeRivit=[28,-1], lahde="export_SOK_taulukkovienti_2021-10-27_07-45-20.xlsx", kohde="SOK Käyttötavaroiden erätuotelomake (muut käyttötavarat) v2 33 (version 1) (version 1)_ROSTERi.xlsx",debug=True):
-    print(kohdeRivit[0])
-    print(type(kohdeRivit[0]))
+    #print(kohdeRivit[0])
+    #print(type(kohdeRivit[0]))
 
 
 
