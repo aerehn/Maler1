@@ -132,7 +132,7 @@ def run():
             console=Console)
         except ValueError:
             write("Lähdetiedosto ei ole Excel tiedosto",console=Console)
-    else: #this is for testing only
+    else: #writes values with default target row and sourcerows
         ajaArvot(Console,lahde=sourceExcel,kohde=kohdeExcel, debug=debug)
 
 

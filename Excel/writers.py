@@ -107,3 +107,18 @@ def writePiikki(columnList,sheet,targetRow,targetCol,sourceRows):
         sheet[targetCol + str(iterator + targetRow)] = value
         iterator = iterator + 1
 
+def writeAlkMaa(columnList,sheet,targetRow,targetCol,sourceRows):
+    iterator = 0
+    value = ""
+    for i in range(sourceRows[0] - 2, sourceRows[1] - 1):
+        value = str(columnList[i])
+        if value == None:
+            value = "Ei / No"
+        elif "Puola" in value:
+            value = "616: Poland"
+        elif "fi" in value:
+            value = "246: Suomi / Finland"
+        else:
+            value = "Tyhjä"
+        sheet[targetCol + str(iterator + targetRow)] = value
+        iterator = iterator + 1
