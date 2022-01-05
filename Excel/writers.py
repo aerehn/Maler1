@@ -119,6 +119,6 @@ def writeAlkMaa(columnList,sheet,targetRow,targetCol,sourceRows):
         elif "fi" in value:
             value = "246: Suomi / Finland"
         else:
-            value = "Tyhjä"
+            value = "246: Suomi / Finland"
         sheet[targetCol + str(iterator + targetRow)] = value
         iterator = iterator + 1

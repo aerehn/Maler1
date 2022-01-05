@@ -10,7 +10,7 @@ import pandas as pd
 
 # A master function that writes all the values to the target workbook
 
-def ajaArvot(console,lahdeRivit=-1, kohdeRivit=[80,-1], lahde="export_SOK_taulukkovienti_2021-10-27_07-45-20.xlsx", kohde="SOK Käyttötavaroiden erätuotelomake (muut käyttötavarat) v2 33 (version 1) (version 1)_ROSTERi.xlsx",debug=True):
+def ajaArvot(console,lahdeRivit=-1, kohdeRivit=[28,-1], lahde="export_SOK_taulukkovienti_2021-10-27_07-45-20.xlsx", kohde="SOK Käyttötavaroiden erätuotelomake (muut käyttötavarat) v2 33 (version 1) (version 1)_ROSTERi.xlsx",debug=True):
     print(kohdeRivit[0])
     print(type(kohdeRivit[0]))
 
@@ -42,8 +42,8 @@ def ajaArvot(console,lahdeRivit=-1, kohdeRivit=[80,-1], lahde="export_SOK_tauluk
         moro("PermissionError. Kohdetiedosto todennäköisesti auki!")
         write("Lupavirhe! Kohdetiedosto todennäköisesti auki! Tallentaminen epäonnistui.",console=console)
 
-def clearWorkbook(console, kohdeRivit=[80,500], kohde="SOK Käyttötavaroiden erätuotelomake (muut käyttötavarat) v2 33 (version 1) (version 1)_ROSTERi.xlsx",debug=True):
-    columns = {'2. Uutuudet - New articles':["P","R","T","X","AB","AJ","AH","AM","AO","AQ","AS","BR","BS","BT","BW","CQ","CV","CX","DQ","DS","DW","DY","EA","EE","EG","EI","EK","EM","EO","EQ","ES","EV","EX","EZ","FB","FC"],
+def clearWorkbook(console, kohdeRivit=[28,500], kohde="SOK Käyttötavaroiden erätuotelomake (muut käyttötavarat) v2 33 (version 1) (version 1)_ROSTERi.xlsx",debug=True):
+    columns = {'2. Uutuudet - New articles':["P","R","T","V","X","AB","AJ","AH","AM","AO","AQ","AS","BR","BS","BT","BU","BW","CQ","CS","CU","CV","CX","DQ","DS","DW","DY","EA","EE","EG","EI","EK","EM","EO","EQ","ES","EV","EX","EZ","FB","FC"],
                # '2. Toimitusyks. -  Deliv. units':["M","BV","BX","BT","BR","K","AR","AP","AN","AL","I","O",],
                #'3. Nimet - Names':["U","C","M","O"],
                #'5. P.materiaalit - P.materials':["N","R","AO","AQ"],

@@ -15,7 +15,8 @@ def writeUutuudet(workbook, targetRows, source, sourceRows, console):
         writeColumn(source['tuotenimi_40_merkkia-en_GB'], sheet, targetRow + offset, "R", sourceRows=sourceRows)
         writeTuotemerkki(source['tuotemerkki'], sheet, targetRow + offset, "T", sourceRows=sourceRows)
         writePerusmaarayksikko(source['tuotteen_perusmaarayksiko'], sheet, targetRow + offset, "X", sourceRows=sourceRows)
-        writeColumn(source['tilausnumero'], sheet, targetRow + offset, "AB", sourceRows=sourceRows)
+        #writeColumn(source['tilausnumero'], sheet, targetRow + offset, "AB", sourceRows=sourceRows)
+        writeColumn(source['GTINperusyksikko'], sheet, targetRow + offset, "AB", sourceRows=sourceRows)
         #writeColumn(source['uusi_tilausnumero'], sheet, targetRow + offset, "AF", sourceRows=sourceRows)
         writeUnitM(source['jmpaketissa-unit'], sheet, targetRow + offset, "AJ", sourceRows=sourceRows)
         writeLuku(source['pituus'], sheet, targetRow + offset, "AH", sourceRows=sourceRows)
@@ -51,7 +52,6 @@ def writeUutuudet(workbook, targetRows, source, sourceRows, console):
         writeColumn(source['tuotekuvaus_markkinointiteksti-en_GB'], sheet, targetRow + offset, "FA", sourceRows=sourceRows)
         writeColumn(source['tuotteen_ominaisuudet-fi_FI'], sheet, targetRow + offset, "FB", sourceRows=sourceRows)
         writeColumn(source['tuotteen_ominaisuudet-en_GB'], sheet, targetRow + offset, "FC", sourceRows=sourceRows)
-        #Jäljellä
         
         
         
